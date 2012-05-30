@@ -5,6 +5,9 @@
 # Modified by Gabriel Handford for GHUnit
 # Modified by Johan Attali to be compliant with any other projects
 
+# Do not run this file directly. Run it using make. 
+# Note that the iphone.xcodeproj controls what is built in the make file
+
 set -e
 
 # Define these to suit your nefarious purposes
@@ -16,7 +19,8 @@ set -e
 # Where we'll put the build framework.
 # The script presumes we're in the project root
 # directory. Xcode builds in "build" by default
-FRAMEWORK_BUILD_PATH="build/Framework"
+BUILD_DIR="build"
+FRAMEWORK_BUILD_PATH="$BUILD_DIR/Framework"
 
 # Clean any existing framework that might be there
 # already
@@ -38,7 +42,7 @@ mkdir -p $FRAMEWORK_DIR/Versions/$FRAMEWORK_VERSION/Resources
 mkdir -p $FRAMEWORK_DIR/Versions/$FRAMEWORK_VERSION/Headers
 
 echo "Framework: Creating symlinks..."
-echo  $FRAMEWORK_DIR
+echo "    $FRAMEWORK_DIR"
 ln -s $FRAMEWORK_VERSION $FRAMEWORK_DIR/Versions/Current
 ln -s Versions/Current/Headers $FRAMEWORK_DIR/Headers
 ln -s Versions/Current/Resources $FRAMEWORK_DIR/Resources
@@ -58,6 +62,8 @@ I386_FILES="${BUILD_DIR}/$BUILD_TYPE-iphonesimulator/${LIB_NAME}Simulator.a"
 # The library file is given the same name as the
 # framework with no .a extension.
 echo "Framework: Creating library..."
+echo "    $ARM_FILES"
+echo "    $I386_FILES"
 
 lipo \
   -create \
@@ -65,14 +71,19 @@ lipo \
   "$I386_FILES" \
   -o "$FRAMEWORK_DIR/Versions/Current/$FRAMEWORK_NAME"
 
+# Make the file executable
+chmod a+x "$FRAMEWORK_DIR/Versions/Current/$FRAMEWORK_NAME"
+
 # Now copy the final assets over: your library
 # header files and the plist file
 echo "Framework: Copying assets into current version..."
 find ${PROJECT_DIR}/Classes -name "*.h" -exec cp {} $FRAMEWORK_DIR/Headers/ \; -print
+find ${PROJECT_DIR}/External -name "*.h" -exec cp {} $FRAMEWORK_DIR/Headers/ \; -print
 cp ${PRODUCT_NAME}.plist $FRAMEWORK_DIR/Resources/Info.plist
 
 echo ""
 echo "The framework was built at:  ${PROJECT_DIR}/$FRAMEWORK_DIR"
 echo ""
 
-open "$FRAMEWORK_BUILD_PATH"
+# Open in finder, if you'd like a little obnoxious
+#open "$FRAMEWORK_BUILD_PATH"

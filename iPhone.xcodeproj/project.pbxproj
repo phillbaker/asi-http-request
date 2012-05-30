@@ -227,6 +227,8 @@
 		DADCEB9F12D505AB00958557 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DADCEB9E12D505AB00958557 /* libz.dylib */; };
 		DADCEBA012D505B900958557 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DADCEB9E12D505AB00958557 /* libz.dylib */; };
 		DADCEBA112D505C700958557 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DADCEB9E12D505AB00958557 /* libz.dylib */; };
+		FA695A6F157606DF00961811 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B55252B311D22E2200F9B170 /* Reachability.m */; };
+		FA695A71157606E600961811 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = B55252B211D22E2200F9B170 /* Reachability.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -744,6 +746,7 @@
 				0436EF1013FAD08000E75011 /* ASICloudFilesObjectRequest.h in Headers */,
 				0436EF1113FAD08000E75011 /* ASICloudFilesRequest.h in Headers */,
 				043151B713FBC19C00C01878 /* ASIHTTPFramework.h in Headers */,
+				FA695A71157606E600961811 /* Reachability.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1021,6 +1024,7 @@
 				0436EEF513FAD05B00E75011 /* ASICloudFilesObject.m in Sources */,
 				0436EEF613FAD05B00E75011 /* ASICloudFilesObjectRequest.m in Sources */,
 				0436EEF713FAD05B00E75011 /* ASICloudFilesRequest.m in Sources */,
+				FA695A6F157606DF00961811 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1171,6 +1175,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
 				DSTROOT = /tmp/ASIHTTPRequest__Device_.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1189,12 +1197,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
 				DSTROOT = /tmp/ASIHTTPRequest__Device_.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iPhone Sample/iPhone_Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = ASIHTTPFrameworkDevice;
 			};
@@ -1249,6 +1262,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
@@ -1269,6 +1286,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

@@ -9,7 +9,7 @@
 //
 //	This will provide a way for people using the ASIHTTPFramework to only add 
 //	#import <ASIHTTPFramework/ASIHTTPFramework.h> to their projects.
-//	(obviously after they've been adding the framework to the project)
+//	(obviously after they've added the framework to the project)
 
 
 // Classes
