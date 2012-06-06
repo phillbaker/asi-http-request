@@ -35,3 +35,4 @@ Documentation is available "here":http://allseeing-i.com/ASIHTTPRequest.
 
 == See also ==
 * https://github.com/politovao/ASIHTTPRequest.framework <- Not compiled for armv6
+* https://github.com/apouche/asi-http-request <- .sh and setup stolen from this repo
