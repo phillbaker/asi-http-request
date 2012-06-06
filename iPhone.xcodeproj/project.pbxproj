@@ -227,6 +227,7 @@
 		DADCEB9F12D505AB00958557 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DADCEB9E12D505AB00958557 /* libz.dylib */; };
 		DADCEBA012D505B900958557 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DADCEB9E12D505AB00958557 /* libz.dylib */; };
 		DADCEBA112D505C700958557 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DADCEB9E12D505AB00958557 /* libz.dylib */; };
+		FA03F1F8157FB08100CABA30 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B55252B311D22E2200F9B170 /* Reachability.m */; };
 		FA695A6F157606DF00961811 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B55252B311D22E2200F9B170 /* Reachability.m */; };
 		FA695A71157606E600961811 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = B55252B211D22E2200F9B170 /* Reachability.h */; };
 /* End PBXBuildFile section */
@@ -995,6 +996,7 @@
 				0436EEDF13FAD05900E75011 /* ASICloudFilesObject.m in Sources */,
 				0436EEE013FAD05900E75011 /* ASICloudFilesObjectRequest.m in Sources */,
 				0436EEE113FAD05900E75011 /* ASICloudFilesRequest.m in Sources */,
+				FA03F1F8157FB08100CABA30 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
